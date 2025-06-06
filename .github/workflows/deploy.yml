@@ -11,4 +11,4 @@ jobs:
     steps:
       - name: Print secrets and environment variables
         run: |
-          echo "${{ secrets.TOKEN_SECRET }}"
+          echo "${{ secrets.TEST }}"
