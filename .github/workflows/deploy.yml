@@ -24,8 +24,12 @@ jobs:
       - name: Run tests
         run: npm test
 
+      - name: Build project
+        run: npm run build
+
   deploy:
     needs: build-and-test
+    if: ${{ always() }} # Always run deploy job even if build-and-test fail
     runs-on: ubuntu-latest
 
     steps:
