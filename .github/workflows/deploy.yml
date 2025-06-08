@@ -27,6 +27,11 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Upload build artifacts
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public/
+
   deploy:
     needs: build-and-test
     if: ${{ always() }} # Always run deploy job even if build-and-test fail
